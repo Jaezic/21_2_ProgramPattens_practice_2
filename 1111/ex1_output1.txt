@@ -1,0 +1,5 @@
+Kim 20
+Lee 45
+Youn 44
+Choi 20
+Han 30
