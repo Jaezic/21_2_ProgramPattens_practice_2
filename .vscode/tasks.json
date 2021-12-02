@@ -9,7 +9,7 @@
     "tasks": [
         //C++ 컴파일
         {
-            "label": "save and compile for C++",
+            "label": "C++ 파일을 저장하고 컴파일하기",
             "command": "g++",
             "args": [
                 "${file}",
@@ -38,7 +38,7 @@
         },
         //C 컴파일
         {
-            "label": "save and compile for C",
+            "label": "C 파일을 저장하고 컴파일하기",
             "command": "gcc",
             "args": [
                 "${file}",
@@ -67,12 +67,21 @@
         },
         // // 바이너리 실행(Windows)
         {
-            "label": "execute",
+            "label": "윈도우에서 컴파일 파일 실행하기",
             "command": "cmd",
             "group": "test",
             "args": [
                 "/C",
                 "${fileDirname}\\${fileBasenameNoExtension}"
+            ]
+        },
+        // // 바이너리 실행(Mac)
+        {
+            "label": "맥에서 컴파일 파일 실행하기",
+            "command": "",
+            "group": "test",
+            "args": [
+                "${fileDirname}\/${fileBasenameNoExtension}"
             ]
         }
     ]
