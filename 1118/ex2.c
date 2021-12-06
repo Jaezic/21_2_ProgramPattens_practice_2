@@ -18,7 +18,7 @@ int main()
         // printf("key=%d next=%d\n", (*node).key, (*node).next);
 
         //==== 위 아래가 똑같다.
-        node->key = 100;
+        (*node).key = 100;
         node->next = NULL;
         printf("key=%d next=%d\n", node->key, node->next);
         free(node);

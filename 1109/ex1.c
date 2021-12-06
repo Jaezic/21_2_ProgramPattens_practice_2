@@ -17,17 +17,31 @@ void swap(struct PERSON *a, struct PERSON *b)
     *a = *b;
     *b = temp;
 }
-void sort_by_hobby(struct PERSON *a, int n)
+void sort_by_age(struct PERSON *a, int n)
 {
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = n - 1; j > i; j--)
+        {
+            if (a[j - 1].age > a[j].age)
+                swap(&a[j - 1], &a[j]);
+        }
+    }
+}
+void sort_by_hobby(struct PERSON *a, int n)
+{
+    int i, j;
+
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = n - 1; j > i; j--)
         {
             if (strcmp(a[j - 1].hobby, a[j].hobby) > 0)
                 swap(&a[j - 1], &a[j]);
         }
     }
 }
+
 int main()
 {
     FILE *input;

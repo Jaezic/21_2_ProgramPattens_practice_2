@@ -77,19 +77,18 @@ void searchTest()
     else
         printf("Search key not found\n");
 }
-void deleteNode(struct NODE *head, struct NODE *node)
+void deleteNode(struct NODE *head, struct NODE node)
 {
-    struct NODE *cNode = head;
-    struct NODE *pNode = NULL;
-    while (cNode != NULL)
+    struct NODE *ptr = head;
+    struct NODE *prev = NULL;
+    while (ptr != NULL)
     {
-        if (cNode->key == node->key)
+        if (ptr->key == node.key)
             break;
-        pNode = cNode;
-        cNode = cNode->next;
+        prev = ptr;
+        ptr = ptr->next;
     }
-    node->next = cNode;
-    pNode->next = node;
+    prev->next = ptr->next;
 }
 void displayList(struct NODE *head)
 {

@@ -47,7 +47,6 @@ void lengthTest()
     struct NODE *myList = buildingOneTwoThree();
     int len = Length(myList);
     printf("length of the list = %d\n", len);
-    ;
 }
 int main()
 {

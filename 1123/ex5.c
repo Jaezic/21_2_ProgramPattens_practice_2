@@ -53,6 +53,7 @@ int searchKey(struct NODE *list_head, int searchKey)
     }
     return 0;
 }
+
 void addNode(struct NODE *head, struct NODE *node)
 {
     struct NODE *prev;

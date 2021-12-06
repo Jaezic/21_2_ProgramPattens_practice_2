@@ -9,7 +9,7 @@ int main()
 
     myFile = fopen("ex1_input.txt", "w");
     if (myFile == NULL)
-        printf("\nFile Could Not Be Opened");
+        printf("\nFile Could Not Be Opened ");
     else
     {
         for (i = 0; i < 2; i++)

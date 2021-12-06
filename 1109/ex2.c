@@ -29,9 +29,9 @@ void generation()
     srand(time(NULL));
     for (int i = 0; i < MAX; i++)
     {
-        tmp_city = rand() % NUM_CITY;
-        tmp_age = rand() % RANGE_AGE + 20;
-        tmp_candidate = rand() % NUM_CANDI;
+        tmp_city = rand() % NUM_CITY;       // 0 ~ 2 (3개)
+        tmp_age = rand() % RANGE_AGE + 20;  //( 0 ~ 59 ) + 20 (60개)
+        tmp_candidate = rand() % NUM_CANDI; // (0 ~ 2) (3개)
         fprintf(myOutFile, "%s %d %d\n", city[tmp_city], tmp_age, tmp_candidate);
     }
     fclose(myOutFile);
@@ -45,9 +45,10 @@ void init(struct PERSON *p, int num, const char *name)
     {
         printf("Could not open vote.txt!\n");
     }
-    for (int i = 0; i < num; i++)
+    int i = 0;
+    while (fscanf(myInFile, "%s %d %d", p[i].region, &p[i].age, &p[i].candidate_voted) != EOF)
     {
-        fscanf(myInFile, "%s %d %d", p[i].region, &p[i].age, &p[i].candidate_voted);
+        i++;
     }
     fclose(myInFile);
 }
@@ -55,7 +56,7 @@ void init(struct PERSON *p, int num, const char *name)
 int num_count(struct PERSON *p, int candidate, int line, int num)
 {
     int count = 0;
-    for (int i = 0; i < num; i += line)
+    for (int i = 0; i < num; i += 1)
     {
         if (p[i].candidate_voted == candidate)
             count++;

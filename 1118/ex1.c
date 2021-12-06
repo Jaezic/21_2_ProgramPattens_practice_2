@@ -13,7 +13,7 @@ int main()
         printf("malloc failed");
         exit(1);
     }
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < number; i++)
     {
         printf("Type an integer:");
         scanf("%d", &nums[i]);
